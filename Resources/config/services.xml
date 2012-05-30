@@ -62,14 +62,14 @@
             <argument type="service" id="kernel" />
         </service>
 
-        <service id="admingeneretor.cache_warmer" class="%admingenerator.cache_warmer.class%" public="false">
+        <service id="admingenerator.cache_warmer" class="%admingenerator.cache_warmer.class%" public="false">
             <tag name="kernel.cache_warmer" />
             <argument type="service" id="service_container" />
             <argument type="service" id="admingenerator.finder" />
         </service>
 
         <!-- Menu -->
-        <service id="admingeneretor.menu_builder" class="%admingeneretor.menu_builder.class%">
+        <service id="admingenerator.menu_builder" class="%admingenerator.menu_builder.class%">
             <tag name="knp_menu.menu" alias="admin" />
             <argument type="service" id="knp_menu.factory" />
             <call method="setContainer">
@@ -77,8 +77,8 @@
             </call>
         </service>
 
-        <service id="admingeneretor.menu.admin" class="%admingeneretor.menu_builder.class%"
-             factory-service="admingeneretor.menu_builder"
+        <service id="admingenerator.menu.admin" class="%admingenerator.menu_builder.class%"
+             factory-service="admingenerator.menu_builder"
              factory-method="createAdminMenu"
              scope="request">
             <tag name="knp_menu.menu" alias="admin" />
